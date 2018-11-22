@@ -1,0 +1,32 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.3.10'
+}
+
+apply plugin: 'java'
+apply plugin: 'kotlin'
+
+group 'com.kennethbrewer.domain'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+project.ext {
+    junitVersion = "4.12"
+}
+
+dependencies {
+    testImplementation "junit:junit:$rootProject.ext.junitVersion"
+}
